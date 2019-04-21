@@ -6,7 +6,7 @@
 /*   By: erahimi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 19:40:12 by erahimi           #+#    #+#             */
-/*   Updated: 2019/04/18 14:58:22 by erahimi          ###   ########.fr       */
+/*   Updated: 2019/04/18 15:54:00 by erahimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_strclr(char *s)
 {
 	if (s != NULL)
-	ft_memset((void *)s, 0, ft_strlen(s));
+		ft_memset((void *)s, 0, ft_strlen(s));
 }

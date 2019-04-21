@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erahimi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 19:49:01 by erahimi           #+#    #+#             */
-/*   Updated: 2019/04/20 21:54:49 by erahimi          ###   ########.fr       */
+/*   Created: 2019/04/20 22:35:40 by erahimi           #+#    #+#             */
+/*   Updated: 2019/04/20 22:55:45 by erahimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+void	*ft_realloc(void *ptr, size_t prev_size, size_t new_size)
 {
-	size_t				i;
-	const unsigned char	*sa;
-	const unsigned char	*sb;
+	void	*new;
 
-	i = 0;
-	sa = s1;
-	sb = s2;
-	while (i < n)
+	if (!ptr)
+		return (NULL);
+	if (!(new = ft_memalloc(new_size)))
 	{
-		if (sa[i] != sb[i])
-		{
-			return (sa[i] - sb[i]);
-		}
-		i++;
+		free(ptr);
+		return (NULL);
 	}
-	return (0);
+	ft_memcpy(new, ptr, prev_size < new_size ? prev_size : new_size);
+	free(ptr);
+	return (new);
 }

@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erahimi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 19:49:01 by erahimi           #+#    #+#             */
-/*   Updated: 2019/04/20 21:54:49 by erahimi          ###   ########.fr       */
+/*   Created: 2019/04/09 20:45:25 by erahimi           #+#    #+#             */
+/*   Updated: 2019/04/10 15:46:03 by erahimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int		ft_tolower(int c)
 {
-	size_t				i;
-	const unsigned char	*sa;
-	const unsigned char	*sb;
-
-	i = 0;
-	sa = s1;
-	sb = s2;
-	while (i < n)
+	if (('A' <= c) && (c <= 'Z'))
 	{
-		if (sa[i] != sb[i])
-		{
-			return (sa[i] - sb[i]);
-		}
-		i++;
+		return (c + 32);
 	}
-	return (0);
+	return (c);
 }

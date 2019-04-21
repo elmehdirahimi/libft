@@ -6,7 +6,7 @@
 /*   By: erahimi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 13:49:13 by erahimi           #+#    #+#             */
-/*   Updated: 2019/04/18 15:18:51 by erahimi          ###   ########.fr       */
+/*   Updated: 2019/04/20 21:53:14 by erahimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	if (s != NULL)
+	if (s)
+	{
 		write(fd, s, ft_strlen(s));
+	}
 }

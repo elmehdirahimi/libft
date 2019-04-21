@@ -6,7 +6,7 @@
 /*   By: erahimi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 20:51:32 by erahimi           #+#    #+#             */
-/*   Updated: 2019/04/18 15:08:28 by erahimi          ###   ########.fr       */
+/*   Updated: 2019/04/18 15:43:59 by erahimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_strequ(char const *s1, char const *s2)
 {
 	if (s1 == NULL || s2 == NULL)
 		return (0);
-	if(ft_strcmp(s1, s2) == 0)
+	if (ft_strcmp(s1, s2) == 0)
 	{
 		return (1);
 	}

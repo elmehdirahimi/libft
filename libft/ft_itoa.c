@@ -6,24 +6,26 @@
 /*   By: erahimi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 12:49:25 by erahimi           #+#    #+#             */
-/*   Updated: 2019/04/18 13:27:03 by erahimi          ###   ########.fr       */
+/*   Updated: 2019/04/19 20:25:41 by erahimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t		divi(long n)
+static	size_t	divi(long n)
 {
-	if (n == 0)
-	{
-		return (0);
-	}
-	else
-	{
-		return (1 + divi(n / 10));
-	}
-}
+	size_t i;
 
+	i = 0;
+	if (n == 0)
+		return (1);
+	while (n)
+	{
+		i++;
+		n = n / 10;
+	}
+	return (i);
+}
 
 char			*ft_itoa(int n)
 {
@@ -46,7 +48,7 @@ char			*ft_itoa(int n)
 	}
 	while (siz)
 	{
-		tab[siz + x -1] = '0' + (nb % 10);
+		tab[siz + x - 1] = '0' + (nb % 10);
 		nb = nb / 10;
 		siz--;
 	}

@@ -6,16 +6,13 @@
 /*   By: erahimi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 13:58:53 by erahimi           #+#    #+#             */
-/*   Updated: 2019/04/18 13:59:09 by erahimi          ###   ########.fr       */
+/*   Updated: 2019/04/18 15:42:56 by erahimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putnbr(int n)
+void	ft_putnbr(int n)
 {
-	char *str;
-
-	str = ft_itoa(n);
-	ft_putstr(str);
+	ft_putnbr_fd(n, 1);
 }

@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erahimi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 19:49:01 by erahimi           #+#    #+#             */
-/*   Updated: 2019/04/20 21:54:49 by erahimi          ###   ########.fr       */
+/*   Created: 2019/04/11 12:04:29 by erahimi           #+#    #+#             */
+/*   Updated: 2019/04/19 22:35:05 by erahimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strtrim(char const *s)
 {
-	size_t				i;
-	const unsigned char	*sa;
-	const unsigned char	*sb;
+	size_t	fin;
+	char	*temp;
 
-	i = 0;
-	sa = s1;
-	sb = s2;
-	while (i < n)
-	{
-		if (sa[i] != sb[i])
-		{
-			return (sa[i] - sb[i]);
-		}
-		i++;
-	}
-	return (0);
+	if (s == NULL)
+		return (NULL);
+	while (*s && (*s == ' ' || *s == '\t' || *s == '\n'))
+		s++;
+	fin = ft_strlen(s);
+	while (fin && (s[fin - 1] == ' '
+				|| s[fin - 1] == '\t' || s[fin - 1] == '\n'))
+		fin--;
+	if (!(temp = ft_strnew(fin)))
+		return (NULL);
+	temp = ft_strncpy(temp, s, fin);
+	return (temp);
 }

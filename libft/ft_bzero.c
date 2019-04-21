@@ -6,7 +6,7 @@
 /*   By: erahimi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 18:33:02 by erahimi           #+#    #+#             */
-/*   Updated: 2019/04/10 12:34:52 by erahimi          ###   ########.fr       */
+/*   Updated: 2019/04/21 09:00:55 by erahimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int		i;
+	size_t	i;
 	char	*dest;
 
 	i = 0;
 	dest = (char *)s;
-	while (i < (int)n)
+	while (i < n)
 	{
 		dest[i] = 0;
 		i++;

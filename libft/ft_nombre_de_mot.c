@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_nombre_de_mot.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erahimi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 19:49:01 by erahimi           #+#    #+#             */
-/*   Updated: 2019/04/20 21:54:49 by erahimi          ###   ########.fr       */
+/*   Created: 2019/04/20 22:26:09 by erahimi           #+#    #+#             */
+/*   Updated: 2019/04/20 22:26:12 by erahimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int		ft_nombre_de_mot(const char *s, char x)
 {
-	size_t				i;
-	const unsigned char	*sa;
-	const unsigned char	*sb;
+	int nbr;
 
-	i = 0;
-	sa = s1;
-	sb = s2;
-	while (i < n)
+	nbr = 0;
+	while (*s)
 	{
-		if (sa[i] != sb[i])
-		{
-			return (sa[i] - sb[i]);
-		}
-		i++;
+		if (*s != x && (*(s + 1) == x || !(*(s + 1))))
+			nbr++;
+		s++;
 	}
-	return (0);
+	return (nbr);
 }

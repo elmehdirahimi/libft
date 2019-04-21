@@ -6,7 +6,7 @@
 /*   By: erahimi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 11:32:16 by erahimi           #+#    #+#             */
-/*   Updated: 2019/04/10 13:06:43 by erahimi          ###   ########.fr       */
+/*   Updated: 2019/04/19 22:34:36 by erahimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t		ft_strlcat(char *dest, const char *src, size_t size)
 	}
 	else
 	{
-		strncat(dest, src, size - size_of_dest - 1);
+		ft_strncat(dest, src, size - size_of_dest - 1);
 		return (size_of_src + size_of_dest);
 	}
 }

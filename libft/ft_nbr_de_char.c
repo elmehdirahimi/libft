@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_nbr_de_char.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erahimi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 19:49:01 by erahimi           #+#    #+#             */
-/*   Updated: 2019/04/20 21:54:49 by erahimi          ###   ########.fr       */
+/*   Created: 2019/04/20 22:46:32 by erahimi           #+#    #+#             */
+/*   Updated: 2019/04/20 22:56:09 by erahimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+size_t		ft_nbr_de_char(long nbr)
 {
-	size_t				i;
-	const unsigned char	*sa;
-	const unsigned char	*sb;
+	size_t i;
 
 	i = 0;
-	sa = s1;
-	sb = s2;
-	while (i < n)
+	if (nbr == 0)
+		return (1);
+	while (nbr)
 	{
-		if (sa[i] != sb[i])
-		{
-			return (sa[i] - sb[i]);
-		}
 		i++;
+		nbr = nbr / 10;
 	}
-	return (0);
+	return (i);
 }

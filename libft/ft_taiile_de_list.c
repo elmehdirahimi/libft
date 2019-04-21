@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_taiile_de_list.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erahimi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 19:49:01 by erahimi           #+#    #+#             */
-/*   Updated: 2019/04/20 21:54:49 by erahimi          ###   ########.fr       */
+/*   Created: 2019/04/20 22:31:47 by erahimi           #+#    #+#             */
+/*   Updated: 2019/04/20 22:33:38 by erahimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+size_t	ft_taiile_de_list(t_list *lst)
 {
-	size_t				i;
-	const unsigned char	*sa;
-	const unsigned char	*sb;
+	size_t i;
 
 	i = 0;
-	sa = s1;
-	sb = s2;
-	while (i < n)
+	while (lst)
 	{
-		if (sa[i] != sb[i])
-		{
-			return (sa[i] - sb[i]);
-		}
 		i++;
+		lst = lst->next;
 	}
-	return (0);
+	return (i);
 }
